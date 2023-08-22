@@ -13,7 +13,11 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import com.example.medilabmemberapp.constants.Constants
+import com.example.medilabmemberapp.helpers.ApiHelper
 import com.example.medilabmemberapp.helpers.PrefsHelper
+import org.json.JSONArray
+import org.json.JSONObject
 import java.util.Calendar
 
 class MemberSignUp3 : AppCompatActivity() {
@@ -80,17 +84,43 @@ class MemberSignUp3 : AppCompatActivity() {
             val password = PrefsHelper.getPrefs(applicationContext,"password")
             val location_id = PrefsHelper.getPrefs(applicationContext,"location_id")
 
+            //api->string
+            //data(body)->jsonobject
+            //callBack interface->JSONObject
+            val api = Constants.BASE_URL +"/member_signup"
+            val body = JSONObject()
+            body.put("surname",surname.toString())
+            body.put("others",others.toString())
+            body.put("gender",gender.toString())
+            body.put("email",email.toString())
+            body.put("phone",phone.toString())
+            body.put("dob",dob.toString())
+            body.put("password",password.toString())
+            body.put("location_id",location_id.toString())
+
+            //create an object from api helper class
+            val helper = ApiHelper(applicationContext)
+            helper.post(api, body, object:ApiHelper.CallBack{
+                override fun onSuccess(result: JSONArray?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onSuccess(result: JSONObject?) {
+                    Toast.makeText(applicationContext, "${result.toString()}", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onFailure(result: String?) {
+                    Toast.makeText(applicationContext, "${result.toString()}", Toast.LENGTH_SHORT).show()
+                }
+            })
 
 
 
-            Toast.makeText(applicationContext, "surname:$surname", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "others:$others", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "gender:$gender", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "email:$email", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "phone:$phone", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "dob:$dob", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "password:$password", Toast.LENGTH_SHORT).show()
-            Toast.makeText(applicationContext, "location_id:$location_id", Toast.LENGTH_SHORT).show()
+
+
+
+
+
 
 
 
