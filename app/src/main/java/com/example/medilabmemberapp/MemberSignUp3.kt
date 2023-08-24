@@ -85,7 +85,7 @@ class MemberSignUp3 : AppCompatActivity() {
             val location_id = PrefsHelper.getPrefs(applicationContext,"location_id")
 
             //api->string
-            //data(body)->jsonobject
+            //data(body)->JSONObject
             //callBack interface->JSONObject
             val api = Constants.BASE_URL +"/member_signup"
             val body = JSONObject()
@@ -100,19 +100,7 @@ class MemberSignUp3 : AppCompatActivity() {
 
             //create an object from api helper class
             val helper = ApiHelper(applicationContext)
-            helper.post(api, body, object:ApiHelper.CallBack{
-                override fun onSuccess(result: JSONArray?) {
-                    TODO("Not yet implemented")
-                }
 
-                override fun onSuccess(result: JSONObject?) {
-                    Toast.makeText(applicationContext, "${result.toString()}", Toast.LENGTH_SHORT).show()
-                }
-
-                override fun onFailure(result: String?) {
-                    Toast.makeText(applicationContext, "${result.toString()}", Toast.LENGTH_SHORT).show()
-                }
-            })
 
 
 
@@ -125,6 +113,8 @@ class MemberSignUp3 : AppCompatActivity() {
 
 
             Toast.makeText(applicationContext, "Captured All details", Toast.LENGTH_SHORT).show()
+            val intent = Intent(applicationContext,MemberSignIn::class.java)
+            startActivity(intent)
         }
     }//end of function
 

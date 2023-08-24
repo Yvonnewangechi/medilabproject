@@ -6,4 +6,7 @@
     </style>
 
     <style name="Theme.MediLabMemberApp" parent="Base.Theme.MediLabMemberApp" />
+    <style name="App.Custom.Indicator"  parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#FFEB3B</item>
+    </style>
 </resources>

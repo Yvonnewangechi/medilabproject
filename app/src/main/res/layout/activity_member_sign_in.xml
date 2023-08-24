@@ -34,6 +34,7 @@
 
 
             <EditText
+                android:id="@+id/editSurname"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/custom_background"
@@ -47,6 +48,7 @@
 
 
             <EditText
+                android:id="@+id/editPassword"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@drawable/custom_background"
@@ -72,5 +74,16 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/linkregister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Not registered yet,register now"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textColor="@color/app_color"/>
+
+
 
 </LinearLayout>
