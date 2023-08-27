@@ -13,14 +13,14 @@ class Screen2 : AppCompatActivity() {
         val next = findViewById<TextView>(R.id.next1)
         next.setOnClickListener {
             //Intent message to screen2
-            val intent = Intent(applicationContext,Screen3::class.java)
+            val intent = Intent(applicationContext,BottomSheet::class.java)
             startActivity(intent)
 
         }
 
         val skip = findViewById<TextView>(R.id.skip)
         skip.setOnClickListener {
-            val intent = Intent(applicationContext,MainActivity::class.java)
+            val intent = Intent(applicationContext,BottomSheet::class.java)
             startActivity(intent)
         }
     }

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.MediLabMemberApp"
         tools:targetApi="31">
         <activity
+            android:name=".BottomSheet"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
