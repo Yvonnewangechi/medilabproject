@@ -80,6 +80,18 @@
                 android:layout_marginRight="70dp"
                 android:textColor="@color/white"
                 android:backgroundTint="#03A9F4"/>
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Check Labs"
+                android:textSize="18sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="70dp"
+                android:textColor="@color/white"
+                android:backgroundTint="#03A9F4"
+                />
 
         </LinearLayout>
 
