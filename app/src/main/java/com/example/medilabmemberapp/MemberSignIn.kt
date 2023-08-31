@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.medilabmemberapp.constants.Constants
 import com.example.medilabmemberapp.helpers.ApiHelper
+import com.example.medilabmemberapp.helpers.DialogHelper
 import com.example.medilabmemberapp.helpers.PrefsHelper
 import org.json.JSONArray
 import org.json.JSONObject
@@ -33,6 +34,7 @@ class MemberSignIn : AppCompatActivity() {
 
         val login = findViewById<Button>(R.id.login)
         login.setOnClickListener {
+
 
             //specify endpoint
             val api:String  = Constants.BASE_URL +"/member_signin"
