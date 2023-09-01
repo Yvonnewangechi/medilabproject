@@ -1,10 +1,14 @@
 package com.example.medilabmemberapp
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,6 +43,23 @@ class SearchFragment : Fragment() {
         RecyclerView.layoutManager = LinearLayoutManager(context)
         //call a function to fetch data
         fetchData()
+
+        // find the search view based on the Id
+        val edSearch :EditText = view.findViewById(R.id.search)
+        edSearch.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+
+            }
+
+            override fun onTextChanged(textChanged: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                filter(textChanged.toString())
+
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+
+            }
+        })
         return view
 
 
@@ -67,6 +88,20 @@ class SearchFragment : Fragment() {
             }
         })
     }
+     fun filter(text:String){
+        //create an array list to filter our labs
+        val filteredList :ArrayList<Lab> = ArrayList()
+
+        //loop through the itemList
+        for (item in itemList){
+            if (item.lab_name.lowercase().contains(text.lowercase())){
+                filteredList.add(item)
+            }
+        }
+        LabAdapter.filterList(filteredList)
+    } //end filter function
+
+
 
 
 }

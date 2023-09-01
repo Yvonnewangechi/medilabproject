@@ -30,6 +30,13 @@ class BottomSheet : AppCompatActivity() {
             val intent = Intent(applicationContext,MemberSignUp::class.java)
             startActivity(intent)
         }
+        //add intent to HomeActivity
+        val buttonCheckLabs :Button = findViewById(R.id.btnHome)
+        buttonCheckLabs.setOnClickListener {
+            val intent = Intent(applicationContext,HomeActivity::class.java)
+            startActivity(intent)
+
+        }
 
 
     }

@@ -70,6 +70,7 @@
                 />
 
             <Button
+
                 android:id="@+id/bottomRegisterButton"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
@@ -81,6 +82,7 @@
                 android:textColor="@color/white"
                 android:backgroundTint="#03A9F4"/>
             <Button
+                android:id="@+id/btnHome"
 
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

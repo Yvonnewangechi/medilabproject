@@ -43,7 +43,7 @@ class LabAdapter (var context: Context) :
         //bind data to single lab
         tvLabName.text = singleLab.lab_name
         tvLabPermit.text = singleLab.permit_id
-        tvLabPhone.text = singleLab.phone
+        tvLabPhone.text =  "Tel:" +singleLab.phone
 
     }
 
