@@ -1,16 +1,30 @@
 package com.example.medilabmemberapp
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import com.example.medilabmemberapp.helpers.NetworkHelper
 import com.example.medilabmemberapp.helpers.PrefsHelper
 
 class MemberSignUp : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_sign_up)
+
+        //check internet
+        if(NetworkHelper.isInternetConnected(applicationContext)){
+            Toast.makeText(applicationContext, "You Are Connected", Toast.LENGTH_SHORT).show()
+
+        }
+        else{
+            Toast.makeText(applicationContext, "You are not connected", Toast.LENGTH_SHORT).show()
+
+           showAlertDialog()
+        }
 
         //get data from the three edit texts
         val editSurname = findViewById<EditText>(R.id.editSurname)
@@ -39,5 +53,20 @@ class MemberSignUp : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    private fun showAlertDialog(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Internet Check")
+            .setMessage("Please Check your internet connection")
+            .setPositiveButton("Yes"){dialog, which ->
+               dialog.dismiss()
+            }
+
+
+
+        val alertDialog: AlertDialog = builder.create()
+        alertDialog.show()
+    }
 }
+
 // to create icons we use vector assets

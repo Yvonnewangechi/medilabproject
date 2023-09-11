@@ -20,7 +20,8 @@ class Screen1 : AppCompatActivity() {
 
         val skip = findViewById<TextView>(R.id.skip)
         skip.setOnClickListener {
-            val intent = Intent(applicationContext,MemberSignIn::class.java)
+
+            val intent = Intent(applicationContext,LabTestActivity::class.java)
             startActivity(intent)
         }
     }

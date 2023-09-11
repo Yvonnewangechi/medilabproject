@@ -13,9 +13,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medilabmemberapp.adapters.LabAdapter
+import com.example.medilabmemberapp.adapters.LabTestAdapter
 import com.example.medilabmemberapp.constants.Constants
 import com.example.medilabmemberapp.helpers.ApiHelper
 import com.example.medilabmemberapp.models.Lab
+import com.example.medilabmemberapp.models.LabTest
 import com.google.gson.GsonBuilder
 import org.json.JSONArray
 import org.json.JSONObject
@@ -104,4 +106,12 @@ class SearchFragment : Fragment() {
 
 
 
+
+
+
+
+
+
 }
+
+
